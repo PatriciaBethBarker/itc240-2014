@@ -18,7 +18,7 @@
 <?php
 
 	$method=$_SERVER["REQUEST_METHOD"];
-	echo $method;
+	//echo $method;
 
 	if ($method == "GET") {
 ?>
@@ -26,37 +26,43 @@
 	<form method="post">
  
  	<div>   
- 	<input value="Noun" name="first_noun">
+<!-- <input value="noun" name="first_noun">-->
     <input name="color" placeholder="enter a color">
     <label for="color">Enter a color</label>
   	</div>
 	<div>    
-	<input value="Verb" name="verb">
-	<input name="verb" placeholder="enter a verb">
+<!--	<input value="verb" name="verb">-->
+	<input name="verb" placeholder="enter a pesent tense verb">
 	<label for="verb">Enter a verb</label>
   	</div>
 	<div>
-	<input value="Adjective" name="adjective">
+<!--	<input value="adjective" name="adjective">-->
 	<input name="adjective" placeholder="enter an adjective">
 	<label for="adjective">Enter an adjective</label>    
 	</div>
 	<div>
-	<input value="Number" name="first_number">
-	<input name="number" placeholder="enter a number">
-	<label for="number">Enter a number</label>
+<!--	<input value="number" name="first_number">-->
+	<input name="number_first" placeholder="enter first number">
+	<label for="number">Enter a number between 0 and 2</label>
 	</div>
     <div>
-	<input value="Number" name="second_number">
-	<input name="number" placeholder="enter a number">
-	<label for="number">Enter an other number</label>
+<!--	<input value="number" name="second_number">-->
+	<input name="number_second" placeholder="enter second number">
+	<label for="number">Enter a number between 4 and 9</label>
 	</div>
 
     
-	<button>POST</button>
+	<button>Create a Mad Lib!</button>
 	</form>
 
 
-<p>Hit the POST button and the story will be created below!  Hop to it!</p>
+<p>Hit the button and the story will be created below!  Hop to it!</p>
+
+<?php 
+	} else {
+?>
+<?php //print_r($_REQUEST); ?>
+
 			</div>
             
             <!--here is the end of the form-->
@@ -64,46 +70,54 @@
             <!--the tale starts here-->
             
             	<div>
-<pre>
-<?php
-	} else {
-?> 
+
+<div>
 		
-<?php print_r($_REQUEST); ?>
+    	<pre>
+        <form>
+        
+        <b> Here's the Story</b>
+        
+John is a <?= htmlentities($_REQUEST["first_noun"]) ?> Rabbit.
     
-    John is a: <?= $_REQUEST["first_noun"]?>
+He loves to <?= htmlentities($_REQUEST["verb"]) ?> every time he wakes up in the morning.
+    
+John is a rabbit with <?= htmlentities($_REQUEST["adjective"]) ?> , that's for sure!
+    
+John the Rabbit likes to jump.  How high can he jump?  That's right he jumps <?= htmlentities($_REQUEST["number_first"]) ?> feet into the air.  
 
 <?php
-	$number = $_REQUEST["number"];
-	$post_jumping = $number - 2;
-	if ($post_jumping >= 2){
+	$number = $_REQUEST["number_first"];
+	if ($number_first == 1){
 ?>
-
-	John the Rabbit can jump <?= $post_jumping ?> high!
-    
+John the Rabbit can jump high!
 <?php
-    } else {
+}
 ?>
-
-	John the Rabbit Jumps very high!
-    
+ 
 <?php  
 }  
-
-/*	if (isset($_REQUEST["is_awesome"])){
-	echo "Also, you are wonderful.";
-}*/
 ?>
-    </pre>
-	<a href="itc240_assignmentStory.php">GET</a>
+
+You know, rabbits do not live too long.  
+
+John is <?= $numbers=($_REQUEST ["number_second"]) ?> years old.
+
+<?php
+	$number = $_REQUEST["number_second"];
+	if ($number_second == 4){
+?>
+John is younger than he looks.
+<!--	<a href="index.php">GET</a>-->
 <?php	
 }
-?>            
-
-            
+?>  
+		</form>  
+        </pre>
+        
+</div>
             	</div>
             <!--the tale ends here-->
-            
 		</div>
 </body>
 </html>
