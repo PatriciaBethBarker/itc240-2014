@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Associative Array</title>
+
+
+</head>
+
+<body>
+
+<script>
+
+//Ask the user for their favorite state or country, and display the capital.
+ 	alert("The following is a list of Countries, with their Capitals, that I would like to visit!");
+ 	
+	var countryNames = new Array();
+ 
+		countryNames[0]	="Paris, France";
+		countryNames[1]	="Ankara, Turkey";
+		countryNames[2] ="Wellington, New Zealand";
+		countryNames[3]	="Dublin, Republic of Ireland";
+		countryNames[4]	="Victoria, Republic of Seychelles";
+		
+		for(var i = 0; i < countryNames.length; i++){
+        document.write(countryNames[i]);
+        document.write("<br>");
+                                }
+								
+								
+								
+
+	var namesCapital = {'France':'Paris','Turkey':'Ankara','New 	Zealand':'Wellington', 'Republic of Ireland':'Dublin','Republic of Seychelles':'Victoria'};
+
+var userAnswer;
+userAnswer = prompt("What is your favorite country or city in this list?");
+	
+	
+	//'for in' loops through the namesCapitol associative array. key value pair
+for(var nameCountry in namesCapitol){
+	
+	for(var i = 0; i < 6; i++){
+       if (userAnswer===nameCountry){
+		document.write(namesCapitol[nameCountry]); 
+
+                                	}	
+			}	
+		}
+
+</script>
+
+
+
+</body>
+
+</html>

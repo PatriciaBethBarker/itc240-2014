@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Array of Sunshine - Assignment 3</title>
+
+</head>
+
+<body>
+<script>
+
+//Ask the user to input three data sets and put them in an array.
+
+//Display the data back to the user in FIFO sequence.
+
+alert("Please enter 5 baby names.");
+	var babyList = new Array();
+	
+	for (var i=0; i<5; i++) {
+		var nameBaby=prompt("Enter the baby name!");
+		babyList.push(nameBaby);
+		document.write('Here are the baby names added to your list: ' + babyList[i] + '<br>');
+	};
+	
+	for(var i = 0; i < babyList.length; i++){
+        document.write('Here is your list of baby names: ' + babyList[i] + '<br>');
+        document.write('<br>');
+                                };
+								
+						
+alert("Please enter 5 Sports you watch or play.");
+	var sportList = new Array();
+	
+	for (var i=0; i<5; i++) {
+		var nameSport=prompt("Enter the name of the Sport!");
+		sportList.push(nameSport);
+		document.write('Here are the Sports on your list: ' + sportList[i] + '<br>');
+	};
+	
+	for(var i = 0; i < sportList.length; i++){
+        document.write('Here is your list of baby names: ' + sportList[i] + '<br>');
+        document.write('<br>');
+                                };	
+	
+	
+	
+alert("Please provide 5 numbers between 10 and 30.");
+	var numList = new Array();								
+								
+	for (var i=0; i<5; i++) {
+		var nameNum=prompt("Enter the numbers you chose!");
+		numList.push(nameNum);
+		document.write('Here are the numbers you listed: ' + numList[i] + '<br>');
+	};
+	
+	for(var i = 0; i < numList.length; i++){
+        document.write('Here are the numbers: ' + numList[i] + '<br>');
+        document.write("<br>");
+                                };	
+</script>
+
+<!--<p>Your mission is to use a nested array and a loop to create a page containing a list of five or more items. Each item in the list should have at least three data entries exposed in the loop, at least one of which should be numer.</p>-->
+
+
+
+
+</body>
+</html>

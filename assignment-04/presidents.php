@@ -18,9 +18,9 @@
 <!--make the table headers "sortable" - by clicking on a link in the header, the page should reload with the table sorted by that column-->
 <!--Doing this with ORDER BY in the database is not hard, but do it in a secure way-->
  <?php
-include("../../passwords.php");
+include("passwords.php");
 
-$mysql = new mysqlli("localhost", "pbarke01","$mysql_password","pbarke01");
+$mysql = new mysqlli("localhost", "pbarke01",$mysql_password,"pbarke01");
 
 $result = $mysql->query('SELECT * FROM presidents ORDER BY name ASC, type ASC;');
 
