@@ -23,45 +23,56 @@
 <!--Write prepared queries for at least SELECT and INSERT-->
 <!--Doing this with ORDER BY in the database is not hard, but do it in a secure way-->
 <!--alllow edit of existing receipts and query a total for each month's expenses at the bottom of the receipt list-->
+<!--prepare query, bind and execute-->
 
  <?php
 include("/passwords.php");
 
 $mysql = new mysqlli("localhost", "pbarke01",$mysql_password,"pbarke01");
 
-$result = $mysql->query('SELECT * FROM expense ORDER BY expense_date ASC;');
+if ($_SERVER['REQUEST_METHOD']=="POST") {
+	$query='INSERT INTO expense(name, type, payment_type, expense_date, amount)VALUES(?,?,?,?,?);';
+	$prepared=$mysql->prepare($query);
+	$prepared->bind_param("",$_REQUEST["name"}, $_REQUEST["type"], $_REQUEST["payment_type"], $_REQUEST["expense_date"], $_REQUEST["amount"]);
+	$prepared->execute();
+	}
 
 ?>	
+<!--order the search data and declare in the expense_date varible-->
+<!-- $result = $mysql->query('SELECT * FROM expense ORDER BY expense_date ASC;');-->
 
-	<form action="insert.php" method="post">
-		Name: <input type="text" name="name" />
-		Expense Type: <input type="text" name="type" />
+	<form action="insert.php" method="POST">
+		Name: <input type="text" name="name" placeholder="your name here" />
+		Expense Type: <input type="text" name="type" placeholder="expense type here" />
 		Payment Type: <input type="text" name="payment_type" />
 		Expense Date: <input type="date" name="expense_date" />
 		Amount: <input type="decimal" name="amount" />
         Total: <input type-"decimal" name="total" />
 	<input type="Submit" /></form>
-    
+
 <?php
+
+
 $query="SELECT * FROM expense";$result=mysql_query($query);
+$num=mysqlli_numrows($result);
 $query->execute();
 $result = $query->get_result();
 ?>
 
 <table width="600" border="1">
-  <th>
+  <th align="center">
     Expense
   </th>
 <?php
 	foreach($result as $row) {
 ?>
   <tr>  
-    <td> <?= $row["name"] ?> </td>
-    <td> <?= $row["type"] ?> </td>
-    <td> <?= $row["payment_type"] ?> </td>
-    <td> <?= $row["expense_date"] ?> </td>
-    <td> <?= $row["amount"] ?> </td>
-    <td> <?= $row["total"] ?> </td>
+    <td align="center"> <?= $row["name"] ?> </td>
+    <td align="center"> <?= $row["type"] ?> </td>
+    <td align="center"> <?= $row["payment_type"] ?> </td>
+    <td align="center"> <?= $row["expense_date"] ?> </td>
+    <td align="center"> <?= $row["amount"] ?> </td>
+    <td align="center"> <?= $row["total"] ?> </td>
   </tr>
 
 <?php
