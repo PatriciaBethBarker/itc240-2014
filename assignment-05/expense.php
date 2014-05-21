@@ -64,7 +64,22 @@ $total = $prepared->get_result();
 
 <table width="600" border="1">
   <th align="center">
-    Expense
+    Employee Name
+  </th>
+    <th align="center">
+    Expense Type
+  </th>
+    <th align="center">
+    Payment Type
+  </th>
+    <th align="center">
+    Expense Date
+  </th>
+    <th align="center">
+    Amount Spent
+  </th>
+    <th align="center">
+    Total
   </th>
 <?php
 	foreach($result as $row) {
