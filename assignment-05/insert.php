@@ -8,8 +8,8 @@
 		$expense_type=$_POST['expense_date'];
 		$amount=$_POST['amount']; 
 		$total=$_POST['total']; 
-mysqlli_connect(localhost,$username,$password);
-mysqlli_select_db($database) or die ("Unable to select database");
+mysqli_connect(localhost,$username,$password);
+mysqli_select_db($database) or die ("Unable to select database");
 	$query = "INSERT INTO expense VALUES('','$name','$type','$payment_type', '$expense_date','$amount', '$total')";
 mysql_query($query);
 mysql_close(); 
