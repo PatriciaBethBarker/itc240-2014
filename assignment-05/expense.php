@@ -33,7 +33,7 @@ $mysql = new mysqli("localhost", "pbarke01",$mysql_password,"pbarke01");
 if ($_SERVER['REQUEST_METHOD']=="POST") {
 	$query='INSERT INTO expense(name, type, payment_type, expense_date, amount)VALUES(?,?,?,?,?);';
 	$prepared=$mysql->prepare($query);
-	$prepared->bind_param($_REQUEST["name"], $_REQUEST["type"], $_REQUEST["payment_type"], $_REQUEST["expense_date"], $_REQUEST["amount"]);
+	$prepared->bind_param("ssssd",$_REQUEST["name"], $_REQUEST["type"], $_REQUEST["payment_type"], $_REQUEST["expense_date"], $_REQUEST["amount"]);
 	$prepared->execute();
 	}
 
@@ -47,7 +47,7 @@ Expense Type: <input type="text" name="type" placeholder="Expense type" />
 Payment Type: <input type="text" name="payment_type" placeholder="Payment type" />
 Expense Date: <input type="date" name="expense_date" placeholder="Year/Month/Day" />
 Amount: <input type="decimal" name="amount" placeholder="Amount spent" />
-Total: <input type-"decimal" name="total" placeholder="Your total here"> />
+Total: <input type-"decimal" name="total" placeholder="Your total here" />
 	<input type="Submit" /></form>
  
 
@@ -56,11 +56,10 @@ include("passwords.php");
 
 $mysql = new mysqli("localhost", "pbarke01",$mysql_password,"pbarke01");
 
-if ($_SERVER['REQUEST_METHOD']=="POST") 
-$query = 'INSERT INTO insert(name, type, payment_type, expense_date, amount) VALUES (?,?,?,?,?);';
+$select = 'INSERT INTO expense(name, type, payment_type, expense_date, amount) VALUES (?,?,?,?,?);';
 $prepared = $mysql->prepare($select);
 $prepared->execute();
-$total = $query->get_result();
+$total = $prepared->get_result();
 ?>
 
 <table width="600" border="1">
