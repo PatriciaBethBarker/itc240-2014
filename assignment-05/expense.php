@@ -26,37 +26,41 @@
 <!--prepare query, bind and execute-->
 
  <?php
-include("/passwords.php");
+include("passwords.php");
 
-$mysql = new mysqlli("localhost", "pbarke01",$mysql_password,"pbarke01");
+$mysql = new mysqli("localhost", "pbarke01",$mysql_password,"pbarke01");
 
 if ($_SERVER['REQUEST_METHOD']=="POST") {
 	$query='INSERT INTO expense(name, type, payment_type, expense_date, amount)VALUES(?,?,?,?,?);';
 	$prepared=$mysql->prepare($query);
-	$prepared->bind_param("",$_REQUEST["name"}, $_REQUEST["type"], $_REQUEST["payment_type"], $_REQUEST["expense_date"], $_REQUEST["amount"]);
+	$prepared->bind_param($_REQUEST["name"], $_REQUEST["type"], $_REQUEST["payment_type"], $_REQUEST["expense_date"], $_REQUEST["amount"]);
 	$prepared->execute();
 	}
 
 ?>	
 <!--order the search data and declare in the expense_date varible-->
-<!-- $result = $mysql->query('SELECT * FROM expense ORDER BY expense_date ASC;');-->
+
 
 	<form action="insert.php" method="POST">
-		Name: <input type="text" name="name" placeholder="your name here" />
-		Expense Type: <input type="text" name="type" placeholder="expense type here" />
-		Payment Type: <input type="text" name="payment_type" />
-		Expense Date: <input type="date" name="expense_date" />
-		Amount: <input type="decimal" name="amount" />
-        Total: <input type-"decimal" name="total" />
+Name: <input type="text" name="name" placeholder="Your name" />
+Expense Type: <input type="text" name="type" placeholder="Expense type" />
+Payment Type: <input type="text" name="payment_type" placeholder="Payment type" />
+Expense Date: <input type="date" name="expense_date" placeholder="Year/Month/Day" />
+Amount: <input type="decimal" name="amount" placeholder="Amount spent" />
+Total: <input type-"decimal" name="total" placeholder="Your total here"> />
 	<input type="Submit" /></form>
+ 
 
 <?php
+include("passwords.php");
 
+$mysql = new mysqli("localhost", "pbarke01",$mysql_password,"pbarke01");
 
-$query="SELECT * FROM expense";$result=mysql_query($query);
-$num=mysqlli_numrows($result);
-$query->execute();
-$result = $query->get_result();
+if ($_SERVER['REQUEST_METHOD']=="POST") 
+$query = 'INSERT INTO insert(name, type, payment_type, expense_date, amount) VALUES (?,?,?,?,?);';
+$prepared = $mysql->prepare($select);
+$prepared->execute();
+$total = $query->get_result();
 ?>
 
 <table width="600" border="1">
