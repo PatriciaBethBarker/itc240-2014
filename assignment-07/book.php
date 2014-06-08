@@ -14,13 +14,5 @@
 
 <h2>Listing Views</h2>
 	<ul>
-		<li><strong><?= $sfbook["cover", "title", "author"] ?></strong> </li>
-    </ul>  
-    
-      
-    <ul>    
-		<li><em><?= $sfbook["cover", "title", "author", "description"] ?></em> </li>
-	</ul>
-    
-</body>
-</html>
+		<li><strong><?= $sfbook["cover"] ?></strong>
+		<li><em><?= $sfbook["description"] ?></em>
