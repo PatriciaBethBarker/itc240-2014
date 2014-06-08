@@ -17,7 +17,7 @@
 		$sample = [
 			"title" => "The Map of the Sky",
 			"author" => "Félix J. Palma",
-			"cover" => "Map.jpeg",
+			"cover" => "http://www.syndetics.com/index.aspx?isbn=9781451660319/MC.GIF&client=sepup&type=xw12&oclc=",
 			"description" => "Mesmerizing novel casting H.G. Wells in a leading role"
 		];
 		
@@ -26,7 +26,7 @@
 		$options = [
 			"title" => "The Map of the Sky",
 			"author" => "Félix J. Palma",
-			"cover" => "Map.jpeg",
+			"cover" => "http://www.syndetics.com/index.aspx?isbn=9781451660319/MC.GIF&client=sepup&type=xw12&oclc=",
 			"description" => "Mesmerizing novel casting H.G. Wells in a leading role"
 		];
 
@@ -108,7 +108,7 @@
 <?php
 
 	$books = [
-		["sfbook" => "The Map of the Sky", "title" => "Félix J. Palma", "author" => "Map.jpeg", "cover" => "Mesmerizing novel casting H.G. Wells in a leading role", "description" ],
+		["sfbook" => "The Map of the Sky", "title" => "Félix J. Palma", "author" => "http://www.syndetics.com/index.aspx?isbn=9781451660319/MC.GIF&client=sepup&type=xw12&oclc=", "cover" => "Mesmerizing novel casting H.G. Wells in a leading role", "description" ],
 		["sfbook" => "Conquest", "title" => "John Connolly", "author" => "Conquest.jpg", "cover" => "Earth has been invaded by the Illyri", "description" ],
 		["sfbook" => "Antiagon Fire", "title" => "Leland Exton Modesitt, Jr", "author" => "Antiagon.jpeg", "cover" => "Tyrannical Rex Kharst, confronts a powerful order of women", "description" ],
 		["sfbook" => "City of Dragons", "title" => "Robin Hobb", "author" => "Dragons.jpeg", "cover" => "Dragons embark on a dangerous journey to the ancient, mythical homeland of Kelsingera", "description" ],
