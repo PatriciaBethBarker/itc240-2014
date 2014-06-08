@@ -1,7 +1,7 @@
 <?php
 
 	function make_cookie($name, $value) { //all function have parentheis, - this is where we put the argument of the function here. Declare like a varible
-		setcookie($name, $value, time() +5400, "/", no-ip.org); // declare an end time 1.5 hours, search all, url
+		setcookie($name, $value, time() + 5400, "/"); // declare an end time 1.5 hours, search all, url
 		}
 	
 	function delete_cookie($name) {
@@ -76,7 +76,7 @@
 <?php
 	if (isset($_POST['submitted'])){  //if the form is submitted
 		$newbgColor=$_POST['bgColor'];
-			setcookie("bgColor",$newbgColor,time()+5400, "/", no-ip.org );
+			setcookie("bgColor",$newbgColor,time()+5400, "/");
 	}
 									//if first time on page
 	if ((!isset($_COOKIE['bgColor']) )) {
