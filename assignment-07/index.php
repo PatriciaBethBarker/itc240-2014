@@ -14,7 +14,7 @@
 //		make_cookie("cover", "Map.jpeg");
 //		make_cookie("description", "Mesmerizing novel casting H.G. Wells in a leading role");
 //		
-		$sample [
+		$sample = [
 			"title" => "The Map of the Sky",
 			"author" => "Félix J. Palma",
 			"cover" => "Map.jpeg",
@@ -55,10 +55,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>No Eating in the Library</title>
-<style>
 
-
-</style>
 
 </head>
 
@@ -92,8 +89,8 @@
 	}
 ?>
 
-
-<body bgcolor= "<?php echo $bgColor ?>" >
+<!-- change the style below june 8 -->
+<body style="background: <?= $bgColor ?>" >
 <form action= "<?php echo $_SERVER['PHP_SELF']; ?>" method ="POST">  
 <select name=bgColor placeholder=Body Color>
 <option value ="Red">Red</option>
