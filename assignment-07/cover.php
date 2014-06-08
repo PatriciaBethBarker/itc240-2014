@@ -8,7 +8,7 @@
 <body>
 
 	<ul>
-		<li><img src = ""><strong> <?= $books["sfbook"] ?></strong></li>
+		<li><img src = ""><strong> <?= $sfbook["cover"] ?></strong></li>
 	</ul>
 
 </body>
