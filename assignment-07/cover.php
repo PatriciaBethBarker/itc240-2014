@@ -8,7 +8,7 @@
 <body>
 
 	<ul>
-		<li><img src = ""><strong> <?= $sfbook["cover"] ?></strong></li>
+		<li><img src = "http://www.syndetics.com/index.aspx?isbn=9781451660319/MC.GIF&client=sepup&type=xw12&oclc="><strong> <?= $sfbook["cover"] ?></strong></li>
 	</ul>
 
 </body>
