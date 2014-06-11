@@ -43,7 +43,7 @@ echo get_array($_COOKIE, "sort");
 ?>
 
 <!-- decide here what we are selecting or counting or summing up -->
-
+<!-- include student and tutor files somewhere here! -->
 <!DOCTYPE html>
 <html>
 <head>
