@@ -108,11 +108,10 @@
 <?php
 
 	$books = [
-		//["sfbook" => "title", "The Map of the Sky" => "author", "Félix J. Palma" => "cover", "http://www.syndetics.com/index.aspx?isbn=9781451660319/MC.GIF&client=sepup&type=xw12&oclc=" => "description", "Mesmerizing novel casting H.G. Wells in a leading role" ],
-		["title" => "The Map of the Sky", "author" => "Félix J. Palma", "cover" => "http://www.syndetics.com/index.aspx?isbn=9781451660319/MC.GIF&client=sepup&type=xw12&oclc=" => "description" => "Mesmerizing novel casting H.G. Wells in a leading role" ],
-		["sfbook" => "title", "Conquest" => "author", "John Connolly" => "cover", "http://www.syndetics.com/index.aspx?isbn=9781476757124/MC.GIF&client=sepup&type=xw12&oclc=" => "description", "Earth has been invaded by the Illyri" ],
-		["sfbook" => "title", "Antiagon Fire" => "author", "Leland Exton Modesitt, Jr" => "cover", "http://www.syndetics.com/index.aspx?isbn=9780765334572/MC.GIF&client=sepup&type=xw12&oclc=" => "description", "Tyrannical Rex Kharst, confronts a powerful order of women"],
-		["sfbook" => "title", "City of Dragons" => "author", "Robin Hobb" => "cover", "http://www.syndetics.com/index.aspx?isbn=9780061561634/MC.GIF&client=sepup&type=xw12&oclc=" => "description", "Dragons embark on a dangerous journey to the ancient, mythical homeland of Kelsingera" ],
+		["title" => "The Map of the Sky", "author" => "Félix J. Palma", "cover" => "http://www.syndetics.com/index.aspx?isbn=9781451660319/MC.GIF&client=sepup&type=xw12&oclc=", "description" => "Mesmerizing novel casting H.G. Wells in a leading role" ],
+		["title" => "Conquest", "author" => "John Connolly", "cover" =>  "http://www.syndetics.com/index.aspx?isbn=9781476757124/MC.GIF&client=sepup&type=xw12&oclc=", "description" => "Earth has been invaded by the Illyri" ],
+		["title" => "Antiagon Fire", "author" => "Leland Exton Modesitt, Jr", "cover" =>  "http://www.syndetics.com/index.aspx?isbn=9780765334572/MC.GIF&client=sepup&type=xw12&oclc=", "description" =>  "Tyrannical Rex Kharst, confronts a powerful order of women"],
+		["title" =>  "City of Dragons", "author" => "Robin Hobb", "cover" =>  "http://www.syndetics.com/index.aspx?isbn=9780061561634/MC.GIF&client=sepup&type=xw12&oclc=", "description" => "Dragons embark on a dangerous journey to the ancient, mythical homeland of Kelsingera" ],
 	];
 	
 	$show = "all";  //begin with all, then overwrite
