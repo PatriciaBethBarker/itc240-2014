@@ -6,7 +6,8 @@ include("functions.php");
 echo get_array($_REQUEST, "REQUEST METHOD");
 echo get_array($_COOKIE, "sort");
 
-
+update_tutorList();
+$tutorList = get_tutorList();
 
   $column = "tutorName";
   $column = $_REQUEST["sort"];
@@ -15,10 +16,13 @@ echo get_array($_COOKIE, "sort");
   
   
   $whitelist = [ 
-    "tutorName"=> true
-    "subjectName" => true
-    "tutorDate" => true
-    "tutorTime" => true
+    "stName" => true,
+    "stID" => true,
+    "tutorName" => true,
+	"subjectName" => true,
+    "stGender" => true,
+    "tutorDate" => true,
+    "tutorTime" => true,
   ];
 //Your request object is an array  - isset 
 
@@ -27,16 +31,16 @@ echo get_array($_COOKIE, "sort");
 	}
 //single quotes for safety
 
-  $prepared =$mysql->prepare("SELECT * FROM tutorList ORDER BY '$column' DESC; ") ;
+  $prepared =$mysql->prepare("SELECT * FROM tutorList ORDER BY $column DESC; ") ;
   $prepared->execute();
   $results = $prepared->get_result();
 	//we work our way down the rows - not across columns
 	foreach ($results as $row) {
 ?>
 	<div> 
-		<?= htmlentities($row["tutorName"]) ?>
+		<?= htmlentities($row["tutorDate"]) ?>
 		tutorName from 
-        <?= htmlentities($row["subjectName"]) ?>
+        <?= htmlentities($row["stName"]) ?>
 	</div>	
 <?php
 		}
@@ -53,10 +57,11 @@ echo get_array($_COOKIE, "sort");
 
 <body>
 <!--Create table tutorList - stName, stID, tutorName, subjectName , stGender, tutorDate tutorTime  - security, htmlentites, whitelist-->
-<!--Create and call 2 Functions; Function 1 - talk to the database tutorList and update tutorDate   -->
+<!--Create and call 2 Functions; Function 1 - talk to the database tutorList and update tutorDate and stName  -->
 <!--Function 2 - take one argument and return a resulting value; SELECT stName, stID, stGender FROM tutorList -->
 <!-- ORDER BY stName, stGender -->
-
+            
+     
 
 </body>
 </html>
