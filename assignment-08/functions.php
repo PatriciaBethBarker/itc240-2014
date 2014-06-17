@@ -9,12 +9,14 @@ function out($unclean) {
 $mysql = new mysqli(
   "localhost", 
   "pbarke01", 
-  $mysqli_password, 
+  $mysql_password, 
   "pbarke01"
 );
 
 //call password file
-
+//we need to call the db if we want something that isnt in the function you must ask
+//talk to the database tutorList and update tutorDate and stName
+// for permission to use a variable you didn't put in the function -> global $mysql
 function update_tutorDate($stName, $stID){
   global $mysql;
   $prepared = $mysql->prepare('UPDATE tutorList SET tutorDate = ?, WHERE stName =? ');
@@ -24,3 +26,5 @@ function update_tutorDate($stName, $stID){
 	
 }
 ?>
+
+
