@@ -1,15 +1,14 @@
 <?php
 
-  foreach () {
+  foreach ($result AS $row) {
 	  
 ?>	  
 
 <div id="stListing">
 
 	<ul>
-    	<li> stName </li>
-        <li> stID </li>
-        <li> stGender </li>
+    	<li> Student Name: <?= htmlentities($row["stName"]) ?> </li>
+        <li> Tutor Date: <?= htmlentities($row["tutorDate"]) ?> </li>
     </ul>
 
 </div>
