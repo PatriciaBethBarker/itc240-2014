@@ -29,7 +29,7 @@ function setBusSpeed($speed) {
 		echo "Is that St Peter! Jump that gap! </br>";
 		}
 		
-	if($speed>50 && $this->$armed == true;) {
+	if($speed>50 && $this->$armed == true) {
 		$this->$exploded = true;
 		echo "BOOM!!!!! BANG!! BADABOOM!! Explosion! </br>";
 		}
